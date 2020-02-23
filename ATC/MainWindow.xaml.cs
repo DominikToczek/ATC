@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATC.Views.ClearenceDelivery;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,23 @@ namespace ATC
     {
         public MainWindow()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void StartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearenceDeliveryWindow gameWindow = new ClearenceDeliveryWindow(airportIcaoLbl.Text, positionLbl.Text);
+            gameWindow.Show();
+            this.Close();
         }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ATC Simulator" Height="723.013" Width="1171.757" ResizeMode="CanMinimize" Icon="Resources/Images/Icons/logo.png">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto
+        <ComboBox x:Name="airportIcaoLbl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto
                   " Margin="151,384,0,0" Height="37" FontSize="18" RenderTransformOrigin="0.617,-0.008">
             <ComboBoxItem Content="EPWA" FontSize="18" IsSelected="True"/>
             <ComboBoxItem Content="EPKK" FontSize="18"/>
@@ -15,18 +15,18 @@
         </ComboBox>
         <Label Content="Airport:" Margin="50,384,1031,255" FontSize="18" Height="Auto"/>
         <Label Content="Position:" Margin="50,438,1020,197" FontSize="18" Height="Auto"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Margin="151,438,0,0" Height="37" FontSize="18">
-            <ComboBoxItem Content="Clearence Delivery" FontSize="18" IsSelected="True"/>
+        <ComboBox x:Name="positionLbl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Margin="151,438,0,0" Height="37" FontSize="18">
+            <ComboBoxItem Content="Clearence" FontSize="18" IsSelected="True"/>
             <ComboBoxItem Content="Ground" FontSize="18"/>
             <ComboBoxItem Content="Tower" FontSize="18"/>
             <ComboBoxItem Content="Director" FontSize="18"/>
             <ComboBoxItem Content="Approach" FontSize="18"/>
         </ComboBox>
-        <Button x:Name="clearenceDeliveryBtn" Content="Start" VerticalAlignment="Top" Margin="926,365,50,0" Height="63" FontSize="24"/>
-        <Button x:Name="clearenceDeliveryBtn_Copy" Content="Options" VerticalAlignment="Top" Margin="926,457,50,0" Height="63" FontSize="24"/>
-        <Button x:Name="clearenceDeliveryBtn_Copy1" Content="Quit" VerticalAlignment="Top" Margin="926,545,50,0" Height="63" FontSize="24"/>
-        <Image HorizontalAlignment="Left" Height="299" Margin="0,24,0,0" VerticalAlignment="Top" Width="1166" Source="Resources/Images/Backgrounds/mainbanner.jpg"/>
-        <Menu HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="1156">
+        <Button x:Name="StartBtn" Content="Start" VerticalAlignment="Top" Margin="926,365,50,0" Height="63" FontSize="24" Click="StartBtn_Click"/>
+        <Button x:Name="OptionsBtn" Content="Options" VerticalAlignment="Top" Margin="926,457,50,0" Height="63" FontSize="24"/>
+        <Button x:Name="ExitBtn" Content="Exit" VerticalAlignment="Top" Margin="926,545,50,0" Height="63" FontSize="24" Click="ExitBtn_Click"/>
+        <Image HorizontalAlignment="Stretch" Height="299" Margin="0,24,0,0" VerticalAlignment="Top" Width="1166" Source="Resources/Images/Backgrounds/mainbanner.jpg"/>
+        <Menu HorizontalAlignment="Stretch" Height="24" VerticalAlignment="Top" Width="1166">
             <MenuItem Header="File"/>
             <MenuItem Header="Options"/>
             <MenuItem Header="Help"/>
