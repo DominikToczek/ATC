@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ATC.Models.Handlers;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ATC.Views.ClearenceDelivery
 {
@@ -19,33 +8,39 @@ namespace ATC.Views.ClearenceDelivery
     /// </summary>
     public partial class ClearenceDeliveryWindow : Window
     {
-        public ClearenceDeliveryWindow(string airportIcao, string controllerPosition)
+        public ClearenceDeliveryWindow()
         {
             InitializeComponent();
-            Title = $"{airportIcao} - {controllerPosition}";
-            airportIcaoLbl.Content = $"Airport: {airportIcao}";
-            controllerPositionLbl.Content = $"Position: {controllerPosition}";
-            frequencyAtisLbl.Content = $"{airportIcao} ATIS:";
-            frequencyDelLbl.Content = $"{airportIcao} DEL:";
-            frequencyGndLbl.Content = $"{airportIcao} GND:";
-            frequencyTwrLbl.Content = $"{airportIcao} TWR:";
-            frequencyDirLbl.Content = $"{airportIcao} DIR:";
-            frequencyAppLbl.Content = $"{airportIcao} APP:";
+            Title = $"{AirportConfig.AirportIcao} - Clearence";
+            airportIcaoLbl.Content = $"Airport: {AirportConfig.AirportIcao}";
+            controllerPositionLbl.Content = $"Position: Clearence";
+            frequency1Lbl.Content = $"{AirportConfig.AirportIcao} {AirportConfig.Frequencies[0].ShortName}:";
+            frequency2Lbl.Content = $"{AirportConfig.AirportIcao} {AirportConfig.Frequencies[1].ShortName}:";
+            frequency3Lbl.Content = $"{AirportConfig.AirportIcao} {AirportConfig.Frequencies[2].ShortName}:";
+            frequency4Lbl.Content = $"{AirportConfig.AirportIcao} {AirportConfig.Frequencies[3].ShortName}:";
+            frequency5Lbl.Content = $"{AirportConfig.AirportIcao} {AirportConfig.Frequencies[4].ShortName}:";
+            frequency6Lbl.Content = $"{AirportConfig.AirportIcao} {AirportConfig.Frequencies[5].ShortName}:";
+            frequency1ValueLbl.Content = $"{AirportConfig.Frequencies[0].Value}";
+            frequency2ValueLbl.Content = $"{AirportConfig.Frequencies[1].Value}";
+            frequency3ValueLbl.Content = $"{AirportConfig.Frequencies[2].Value}";
+            frequency4ValueLbl.Content = $"{AirportConfig.Frequencies[3].Value}";
+            frequency5ValueLbl.Content = $"{AirportConfig.Frequencies[4].Value}";
+            frequency6ValueLbl.Content = $"{AirportConfig.Frequencies[5].Value}";
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        void Exit_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                this.Close();
+                Close();
             }
         }
 
-        private void HomePage_Click(object sender, RoutedEventArgs e)
+        void HomePage_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            this.Close();
+            Close();
         }
     }
 }

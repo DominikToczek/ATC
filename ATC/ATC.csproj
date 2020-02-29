@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConstantPaths.cs" />
+    <Compile Include="Models\Handlers\Airline.cs" />
+    <Compile Include="Models\Handlers\AirportConfig.cs" />
+    <Compile Include="Models\Handlers\Frequency.cs" />
+    <Compile Include="Models\Handlers\Runway.cs" />
     <Compile Include="Views\ClearenceDelivery\ClearenceDeliveryWindow.xaml.cs">
       <DependentUpon>ClearenceDeliveryWindow.xaml</DependentUpon>
     </Compile>
@@ -115,6 +120,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Backgrounds\was_career_atco_07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Configs\Airports\EPWA.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
