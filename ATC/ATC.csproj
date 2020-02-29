@@ -58,8 +58,12 @@
     <Compile Include="ConstantPaths.cs" />
     <Compile Include="Models\Handlers\Airline.cs" />
     <Compile Include="Models\Handlers\AirportConfig.cs" />
+    <Compile Include="Models\Handlers\Destination.cs" />
     <Compile Include="Models\Handlers\Frequency.cs" />
     <Compile Include="Models\Handlers\Runway.cs" />
+    <Compile Include="Models\Traffic\ITraffic.cs" />
+    <Compile Include="Models\Traffic\Traffic.cs" />
+    <Compile Include="Models\Traffic\TrafficGenerator.cs" />
     <Compile Include="Views\ClearenceDelivery\ClearenceDeliveryWindow.xaml.cs">
       <DependentUpon>ClearenceDeliveryWindow.xaml</DependentUpon>
     </Compile>
