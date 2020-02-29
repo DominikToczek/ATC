@@ -1,0 +1,50 @@
+﻿<Window x:Class="ATC.Views.ClearenceDelivery.ClearenceDeliveryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ATC.Views.ClearenceDelivery"
+        mc:Ignorable="d"
+        Title="ClearenceDeliveryWindow" Height="900" Width="1400" Icon="/ATC;component/Resources/Images/Icons/logo.png"
+        WindowState="Maximized">
+    <Grid>
+        <Menu HorizontalAlignment="Stretch" Height="24" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Home page" Click="HomePage_Click"/>
+                <MenuItem Header="Exit" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Options"/>
+            <MenuItem Header="Help"/>
+        </Menu>
+        <Grid Margin="0,24,0,0" Background="#00010B">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            
+            <Label Grid.Column="0" Grid.Row="0" x:Name="airportIcaoLbl" Content="Airport: XXXX" FontSize="14" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 10"/>
+            <Label Grid.Column="0" Grid.Row="0" x:Name="controllerPositionLbl" Content="Position: xxxxxxxxx" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20, 10"/>
+            <Label Grid.Column="0" Grid.Row="0" x:Name="rwyDepLbl" Content="Dep: XX" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="190,10"/>
+            <Label Grid.Column="0" Grid.Row="0" x:Name="rwyArrLbl" Content="Arr: XX" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="190,10"/>
+            <Label Grid.Column="0" Grid.Row="0" x:Name="weaterLbl" Content="Weather: XXXX XXXXXXX XXXXXXX XXXXX XX/XXX XXXXX XXXXXX" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310, 10"/>
+            
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency1Lbl" Content="ICAO ATIS:" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,0,0,0"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency2Lbl" Content="ICAO DEL:" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,30,0,0"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency3Lbl" Content="ICAO GND:" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,64,0,0" Grid.RowSpan="2"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency4Lbl" Content="ICAO TWR:" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,0,0,0"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency5Lbl" Content="ICAO DIR:" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,30,0,0"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency6Lbl" Content="ICAO APP:" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,64,0,0" Grid.RowSpan="2"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency1ValueLbl" Content="000.000" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,0,0,0"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency2ValueLbl" Content="000.000" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,30,0,0"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency3ValueLbl" Content="000.000" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,64,0,0" Grid.RowSpan="2"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency4ValueLbl" Content="000.000" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="353,0,0,0"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency5ValueLbl" Content="000.000" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="353,30,0,0"/>
+            <Label Grid.Column="1" Grid.Row="0" x:Name="frequency6ValueLbl" Content="000.000" FontSize="14" Height="32" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="353,64,0,0" Grid.RowSpan="2"/>
+        </Grid>
+    </Grid>
+</Window>
