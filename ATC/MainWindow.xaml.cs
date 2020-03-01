@@ -1,4 +1,5 @@
 ﻿using ATC.Models.Handlers;
+using ATC.Models.Traffic;
 using ATC.Views.ClearenceDelivery;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,8 @@ namespace ATC
         void StartBtn_Click(object sender, RoutedEventArgs e)
         {
             LoadAirportConfig(airportIcaoLbl.Text);
+            var trafficGenerator = new TrafficGenerator();
+            trafficGenerator.Run();
             ClearenceDeliveryWindow gameWindow = new ClearenceDeliveryWindow();
             gameWindow.Show();
             Close();
@@ -83,7 +86,8 @@ namespace ATC
                 {
                     var destIcao = destination.ChildNodes[0].InnerText;
                     var destCity = destination.ChildNodes[1].InnerText;
-                    destinations.Add(new Destination(destIcao, destCity));
+                    var weeklyFlights = int.Parse(destination.ChildNodes[2].InnerText);
+                    destinations.Add(new Destination(destIcao, destCity, weeklyFlights));
                 }
 
                 AirportConfig.Airlines.Add(new Airline(name, icao, iata, callsign, destinations));

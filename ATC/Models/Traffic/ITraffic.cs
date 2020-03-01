@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ATC.Models.Traffic
+﻿namespace ATC.Models.Traffic
 {
     public interface ITraffic
     {
+        void SetSquwak(int assignedSquwak);
+
+        void SetSid(string assignedSid);
+
+        void SetWeatherInfo(char assignedWeatherInfo);
+
+        void SetAssignedAltitude(int assignedAltitude);
     }
 }

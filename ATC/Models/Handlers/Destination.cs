@@ -2,13 +2,15 @@
 {
     public class Destination
     {
-        public string Icao { get; set; }
-        public string City { get; set; }
+        public string Icao { get; }
+        public string City { get; }
+        public int WeeklyFlights { get; }
 
-        public Destination(string icao, string city)
+        public Destination(string icao, string city, int weeklyFlights)
         {
             Icao = icao;
             City = city;
+            WeeklyFlights = weeklyFlights;
         }
     }
 }

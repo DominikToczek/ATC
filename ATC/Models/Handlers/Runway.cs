@@ -2,10 +2,10 @@
 {
     public class Runway
     {
-        public string Name { get; set; }
-        public int Heading { get; set; }
-        public int Length { get; set; }
-        public int Width { get; set; }
+        public string Name { get; }
+        public int Heading { get; }
+        public int Length { get; }
+        public int Width { get; }
 
         public Runway(string name, int heading, int length, int width)
         {
