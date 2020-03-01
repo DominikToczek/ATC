@@ -21,9 +21,12 @@ namespace ATC.Models.Traffic
             var airlinesList = new List<Airline>();
             foreach (var airline in AirportConfig.Airlines)
             {
-                for (int i = 0; i < airline.Destinations.Count; i++)
+                foreach (var destination in airline.Destinations)
                 {
-                    airlinesList.Add(airline);
+                    for (int i=0; i<destination.WeeklyFlights; i++)
+                    {
+                        airlinesList.Add(airline);
+                    }
                 }
             }
 
