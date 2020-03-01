@@ -1,4 +1,9 @@
 ﻿using ATC.Models.Handlers;
+using ATC.Models.Simulation;
+using ATC.Models.Traffic;
+using System;
+using System.Collections.Generic;
+using System.Threading;
 using System.Windows;
 
 namespace ATC.Views.ClearenceDelivery
@@ -8,9 +13,13 @@ namespace ATC.Views.ClearenceDelivery
     /// </summary>
     public partial class ClearenceDeliveryWindow : Window
     {
+        public TrafficSim simulation;
+        public List<ITraffic> trafficsList = new List<ITraffic>();
+
         public ClearenceDeliveryWindow()
         {
             InitializeComponent();
+            simulation = new TrafficSim();
             Title = $"{AirportConfig.AirportIcao} - Clearence";
             airportIcaoLbl.Content = $"Airport: {AirportConfig.AirportIcao}";
             controllerPositionLbl.Content = $"Position: Clearence";
@@ -26,6 +35,13 @@ namespace ATC.Views.ClearenceDelivery
             frequency4ValueLbl.Content = $"{AirportConfig.Frequencies[3].Value}";
             frequency5ValueLbl.Content = $"{AirportConfig.Frequencies[4].Value}";
             frequency6ValueLbl.Content = $"{AirportConfig.Frequencies[5].Value}";
+
+            simulation.Run();
+
+            var timer = new Timer((e) =>
+            {
+                trafficsList = simulation.trafficList;
+            }, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
         }
 
         void Exit_Click(object sender, RoutedEventArgs e)

@@ -2,11 +2,11 @@
 {
     public class Frequency
     {
-        public string Name { get; set; }
-        public string ShortName { get; set; }
-        public decimal Value { get; set; }
+        public string Name { get; }
+        public string ShortName { get; }
+        public string Value { get; }
 
-        public Frequency(string name, string shortName, decimal value)
+        public Frequency(string name, string shortName, string value)
         {
             Name = name;
             ShortName = shortName;
