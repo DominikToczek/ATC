@@ -65,6 +65,8 @@
     <Compile Include="Models\Handlers\Destination.cs" />
     <Compile Include="Models\Handlers\Frequency.cs" />
     <Compile Include="Models\Handlers\Runway.cs" />
+    <Compile Include="Models\Simulation\ITrafficSim.cs" />
+    <Compile Include="Models\Simulation\TrafficSim.cs" />
     <Compile Include="Models\Traffic\ITraffic.cs" />
     <Compile Include="Models\Traffic\ITrafficGenerator.cs" />
     <Compile Include="Models\Traffic\Traffic.cs" />

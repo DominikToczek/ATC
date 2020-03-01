@@ -7,12 +7,7 @@ namespace ATC.Models.Traffic
 {
     public class TrafficGenerator : ITrafficGenerator
     {
-        public void Run()
-        {
-            GenerateRandomTraffic();
-        }
-
-        Traffic GenerateRandomTraffic()
+        public Traffic GenerateRandomTraffic()
         {
             var airline = GetRandomAirline();
             var destination = GetRandomDestination(airline);
@@ -52,7 +47,7 @@ namespace ATC.Models.Traffic
             return destinationsList[index];
         }
 
-        public string GenerateCallsign(Airline airline)
+        string GenerateCallsign(Airline airline)
         {
             string[] patternsArray = { "[0-9]{3}", "[0-9]{4}", "[0-9]{2}[A-Z]{1}", "[0-9]{2}[A-Z]{2}" };
             var random = new Random();

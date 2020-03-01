@@ -2,6 +2,6 @@
 {
     public interface ITrafficGenerator
     {
-        void Run();
+        Traffic GenerateRandomTraffic();
     }
 }

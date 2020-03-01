@@ -1,5 +1,4 @@
 ﻿using ATC.Models.Handlers;
-using ATC.Models.Traffic;
 using ATC.Views.ClearenceDelivery;
 using System;
 using System.Collections.Generic;
@@ -30,8 +29,6 @@ namespace ATC
         void StartBtn_Click(object sender, RoutedEventArgs e)
         {
             LoadAirportConfig(airportIcaoLbl.Text);
-            var trafficGenerator = new TrafficGenerator();
-            trafficGenerator.Run();
             ClearenceDeliveryWindow gameWindow = new ClearenceDeliveryWindow();
             gameWindow.Show();
             Close();
